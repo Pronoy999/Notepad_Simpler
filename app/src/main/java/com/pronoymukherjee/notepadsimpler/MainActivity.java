@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < l ; i++) {
             ch = text.charAt(i);
             if (ch == '\n') {
-                temp += " ''n ";
+                temp += "''n";
             } else temp += ch;
         }
         return temp;
