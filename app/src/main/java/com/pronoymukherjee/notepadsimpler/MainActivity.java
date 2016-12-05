@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             text = editData(text);
             fileOutputStream.write(text.getBytes());
         } catch (Exception e) {
-            Toast.makeText(this, "ERROR saving file.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " ERROR saving file. ", Toast.LENGTH_LONG).show();
         }
     }
 
