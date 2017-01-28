@@ -1,7 +1,10 @@
 package com.pronoymukherjee.notepadsimpler;
 
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -12,7 +15,7 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
     EditText editText;
     String fileName = "Note.txt";
-
+    String colors[]={"Red","Blue","Green"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +93,22 @@ public class MainActivity extends AppCompatActivity {
             else temp+=ch;
         }
         return temp;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        MenuItem item;
+        item=menu.add(R.string.settings);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle(R.string.title);
+        return true;
     }
 }
 
