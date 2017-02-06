@@ -1,10 +1,7 @@
 package com.pronoymukherjee.notepadsimpler;
 
-import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,9 +10,9 @@ import java.io.FileOutputStream;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editText;
-    String fileName = "Note.txt";
-    String colors[]={"Red","Blue","Green"};
+    private EditText editText;
+    private final String fileName = "Note.txt";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.text);
     }
 
-    protected void setData() {
+    private void setData() {
         try {
             FileInputStream fileInputStream = openFileInput(fileName);
             Scanner obj = new Scanner(fileInputStream);
@@ -39,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    protected void saveData() {
+    private void saveData() {
         String text = editText.getText().toString();
         try {
             FileOutputStream fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
@@ -69,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         setData();
     }
 
-    public String editData(String text) {
+    private String editData(String text) {
         int l = text.length();
         char ch;
         String temp = "";
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return temp;
     }
-    public String setFormat(String text){
+    private String setFormat(String text){
         int l=text.length();
         int i;char ch;String temp="";
         for(i=0;i<l;i++){
@@ -93,22 +90,6 @@ public class MainActivity extends AppCompatActivity {
             else temp+=ch;
         }
         return temp;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        super.onCreateOptionsMenu(menu);
-        MenuItem item;
-        item=menu.add(R.string.settings);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle(R.string.title);
-        return true;
     }
 }
 

@@ -1,11 +1,4 @@
 <resources>
     <string name="app_name">Notepad Simpler</string>
     <string name="hint">Scribble Here!</string>
-    <string name="settings">Settings</string>
-    <string name="title">Pick a font color</string>
-    <string-array name="colors">
-        <item>Red</item>
-        <item>Blue</item>
-        <item>Green</item>
-    </string-array>
 </resources>
